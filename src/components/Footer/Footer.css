@@ -1,0 +1,14 @@
+footer {
+    margin: 24px 0 12px 0;
+    text-align: center;
+  }
+  
+  footer p {
+    display: inline-block; 
+    font-size: small
+  }
+  
+  footer a {
+      font-weight: 700;
+  }
+  
