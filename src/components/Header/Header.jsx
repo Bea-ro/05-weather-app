@@ -8,13 +8,13 @@ const Header = () => {
       <nav>
         <ul>
         <li>
-          <Link to="/">Home</Link>
+          <Link to="/">El tiempo</Link>
         </li>
           <li>
-          <Link to="por-ciudad">por ciudad</Link>
+          <Link to="por-ciudad">Por ciudad</Link>
         </li>
         <li>
-          <Link to="proximos-dias">próximos días</Link>
+          <Link to="proximos-dias">Próximos días</Link>
         </li>
         </ul>
         </nav>

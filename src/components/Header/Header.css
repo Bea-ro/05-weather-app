@@ -1,0 +1,10 @@
+header {
+    padding: 42px 24px;
+}
+
+ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-left: 0;
+} 

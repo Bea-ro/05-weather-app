@@ -1,0 +1,63 @@
+.weather-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.temp-icon {
+    width: 5%;
+    height: 5%;
+}
+
+.temp {
+font-size: 72px
+}
+
+.weather-description {
+    border-radius: 5px;
+    padding: 12px;
+    margin-bottom: 12px;
+    display: flex;
+    gap: 24px;
+    align-items: center;
+}
+
+.weather-description p, svg {
+    color: var(--color-blue);
+}
+
+.temp-info {
+    background-color: var(--color-yellow);
+    border-radius: 5px;
+    padding: 24px;
+    display: flex;
+    justify-content: center;
+    gap: 12px
+}
+
+.number {
+    font-size: 24px;
+    background-color: var(--color-yellow);
+}
+
+.temp-info p, .temp-info svg {
+    background-color: var(--color-yellow);
+}
+
+.additional-info-container {
+    padding: 24px;   
+    display: flex;
+flex-direction: row;
+gap: 24px
+}
+
+.additional-info {
+display: flex;
+flex-direction: row;
+gap: 6px;
+}
+
+.additional-info svg {
+    background-color: var(--color-light-yellow)
+}
