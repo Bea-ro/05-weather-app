@@ -1,63 +1,73 @@
 .weather-card {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     align-items: center;
-    text-align: center;
+    padding: 38px 24px;
+    gap: 64px;
 }
 
-.temp-icon {
-    width: 5%;
-    height: 5%;
-}
-
-.temp {
-font-size: 72px
-}
-
-.weather-description {
-    border-radius: 5px;
-    padding: 12px;
-    margin-bottom: 12px;
-    display: flex;
-    gap: 24px;
+.main-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 2fr 1r;
     align-items: center;
+    justify-items: center;
+    padding: 24px;
 }
 
-.weather-description p, svg {
+.temp-number {
+    font-size: 132px;
+    line-height: 132px;
+    font-weight: 700;
+    color: var(--color-blue)
+    }
+
+.feel-like {
+font-weight: 500;
+font-size:24px;
+color: var(--color-blue)
+    }    
+    
+.feel-number {
+    font-weight: 700;
     color: var(--color-blue);
+    font-size: 24px
+}
+    
+.temp-word {
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--color-dark-blue);
 }
 
-.temp-info {
-    background-color: var(--color-yellow);
-    border-radius: 5px;
+.secondary-info {
     padding: 24px;
     display: flex;
-    justify-content: center;
-    gap: 12px
+    flex-direction: column;
+    gap: 24px;
+    color: var(--color-darkest-blue);
 }
 
-.number {
-    font-size: 24px;
-    background-color: var(--color-yellow);
+.temp-secondary-info {
+    display: grid;
+    grid-template-columns: 1fr 10fr;
+    align-items: center;
+    gap: 12px;
+    font-size: 18px;
 }
 
-.temp-info p, .temp-info svg {
-    background-color: var(--color-yellow);
+.temp-secondary-text {
+font-weight: 500
 }
 
-.additional-info-container {
-    padding: 24px;   
-    display: flex;
-flex-direction: row;
-gap: 24px
+.secondary-icon {
+    width: 75%;
+    height: 75%;
 }
 
-.additional-info {
-display: flex;
-flex-direction: row;
-gap: 6px;
-}
-
-.additional-info svg {
-    background-color: var(--color-light-yellow)
+.other-secondary-info {
+    display: grid;
+    grid-template-columns: 1fr 10fr;
+    align-items: center;
+    gap: 6px 12px;
 }

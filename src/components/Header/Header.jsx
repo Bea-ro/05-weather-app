@@ -8,10 +8,10 @@ const Header = () => {
       <nav>
         <ul>
         <li>
-          <Link to="/">El tiempo</Link>
+          <Link to="/">hoy</Link>
         </li>
           <li>
-          <Link to="por-ciudad">Por ciudad</Link>
+          <Link to="por-ciudad">Otras ciudades</Link>
         </li>
         <li>
           <Link to="proximos-dias">Próximos días</Link>

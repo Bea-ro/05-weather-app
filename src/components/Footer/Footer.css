@@ -1,14 +1,16 @@
 footer {
-    margin: 24px 0 12px 0;
+    padding: 38px 24px;
     text-align: center;
   }
   
   footer p {
     display: inline-block; 
-    font-size: small
+    font-size: small;
+    color: var(--color-darkest-blue);
   }
   
   footer a {
       font-weight: 700;
+      color: var(--color-darkest-blue);
   }
   

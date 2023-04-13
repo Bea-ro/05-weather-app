@@ -1,8 +1,8 @@
 import React from 'react';
 import './WeatherCard.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTemperatureThreeQuarters, faUmbrella, faWind } from '@fortawesome/free-solid-svg-icons';
-import TempIcon from '../TempIcon/TempIcon';
+import { faTemperatureThreeQuarters, faUmbrella, faWind, faWater } from '@fortawesome/free-solid-svg-icons';
+import MainIcon from '../MainIcon/MainIcon';
 
 const WeatherCard = ( {weather, error, loaded} ) => {
   
@@ -11,32 +11,30 @@ const WeatherCard = ( {weather, error, loaded} ) => {
   return (
     <section className="weather-card">
       
-      <article className="weather-description">
-      <TempIcon description={weather?.weather[0].description}/>
-      <div className="desc-temp">
-      <p>{weather?.weather[0].description}</p>
-      <p className="temp">{Math.round(weather?.main.temp)} °</p>
-      </div>
-      </article>
+      <article className="main-info">
+      <MainIcon icon={weather?.weather[0].main}/>
+      <p className="temp-number">{Math.round(weather?.main.temp)}°</p>
+      <p className="temp-word">{weather?.weather[0].description}</p>     
+      <p className="feel-like">Sensación térmica <span className="feel-number">{Math.round(weather?.main.feels_like)}°</span></p>
+    
+      </article>  
 
-      <article className="temp-info">
-      <FontAwesomeIcon icon={faTemperatureThreeQuarters} className="temp-icon" />
-      <div className="temp-details">
-      <p>Mínima: <span className="number">{Math.round(weather?.main.temp_min)} °</span> - Máxima: <span className="number">{Math.round(weather?.main.temp_max)} °</span></p>
-      <p>Sensación térmica: <span className="number">{Math.round(weather?.main.feels_like)} °</span></p>
+      <article className="secondary-info">
+      
+      <div className="temp-secondary-info">
+      <FontAwesomeIcon icon={faTemperatureThreeQuarters} className="secondary-icon" />
+      <p className="temp-secondary-text">Mínima <span className="number">{Math.round(weather?.main.temp_min)}°</span> - Máxima <span className="number">{Math.round(weather?.main.temp_max)}°</span></p>
       </div>
-      </article>
-       
-       <article className="additional-info-container">   
-       <figure className="additional-info">
-       <FontAwesomeIcon icon={faUmbrella} className="additional-icon"/>
+      
+       <div className="other-secondary-info">    
+       <FontAwesomeIcon icon={faUmbrella} className="secondary-icon"/>
        <p>Precipitaciones:  </p>
-       </figure>
-
-       <figure className="additional-info">
-       <FontAwesomeIcon icon={faWind} className="additional-icon"/> 
+       <FontAwesomeIcon icon={faWind} className="secondary-icon"/> 
        <p>Viento velocidad: {weather?.wind.speed} </p>
-       </figure>
+       <FontAwesomeIcon icon={faWater} className="secondary-icon"/> 
+       <p>Humedad: {weather?.main.humidity} </p>
+       </div>
+       
        </article>
 
     </section>

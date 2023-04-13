@@ -1,5 +1,11 @@
 header {
-    padding: 42px 24px;
+    padding: 38px 24px;
+    background-color: var(--color-yellow);
+}
+
+header nav, header ul, header li, header a {
+    background-color: inherit;
+    color: var(--color-darkest-blue);
 }
 
 ul {
@@ -7,4 +13,5 @@ ul {
     flex-direction: row;
     justify-content: space-around;
     padding-left: 0;
+    text-transform: uppercase
 } 
