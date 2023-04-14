@@ -6,7 +6,7 @@ faSmog, } from '@fortawesome/free-solid-svg-icons';
 
 const MainIcon = ( {icon} ) => {
   return (
-    <>
+    <div className="main-icon-container">
        {
        icon === 'Clouds' ? (<FontAwesomeIcon icon={faCloud} className="main-icon"/>) : 
        icon === 'Clear' ? (<FontAwesomeIcon icon={faSun} className="main-icon"/>) :
@@ -16,7 +16,7 @@ const MainIcon = ( {icon} ) => {
        icon === 'Mist' ? (<FontAwesomeIcon icon={faSmog} className="main-icon"/>) :   
        (<></>)
 }
-    </>
+    </div>
   )
 }
 

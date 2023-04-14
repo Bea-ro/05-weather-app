@@ -1,6 +1,6 @@
 {
   "coord": { "lon": 10.99, "lat": 44.34 },
-  "weather": [{ "id": 804, "main": "Clouds", "description": "nubes", "icon": "04n" }],
+  "weather": [{ "id": 804, "main": "Rain", "description": "nubes", "icon": "04n" }],
   "base": "stations",
   "main": {
     "temp": 10.25,

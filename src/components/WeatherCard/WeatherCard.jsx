@@ -1,43 +1,47 @@
 import React from 'react';
 import './WeatherCard.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTemperatureThreeQuarters, faUmbrella, faWind, faWater } from '@fortawesome/free-solid-svg-icons';
+import { faUmbrella, faWind, faWater } from '@fortawesome/free-solid-svg-icons';
+import Circle from '../Circle/Circle';
 import MainIcon from '../MainIcon/MainIcon';
+import MainInfo from '../MainInfo/MainInfo';
+import Location from '../Location/Location';
 
 const WeatherCard = ( {weather, error, loaded} ) => {
   
-  const iconUrl = `https://openweathermap.org/img/wn/${weather?.weather[0].icon}@2x.png`
-  
   return (
-    <section className="weather-card">
-      
-      <article className="main-info">
-      <MainIcon icon={weather?.weather[0].main}/>
-      <p className="temp-number">{Math.round(weather?.main.temp)}°</p>
-      <p className="temp-word">{weather?.weather[0].description}</p>     
-      <p className="feel-like">Sensación térmica <span className="feel-number">{Math.round(weather?.main.feels_like)}°</span></p>
-    
-      </article>  
+    <div className="weather-card">
+   
+   <Circle id="circle-two" 
+   property="Viento" 
+   icon={<FontAwesomeIcon icon={faWind} className="secondary-icon"/>}  
+   value={weather?.wind.speed}/>
+<Circle id="circle-three" 
+   property="Humedad" 
+   icon={<FontAwesomeIcon icon={faWater} className="secondary-icon"/>}  
+   value={weather?.main.humidity}/>
+<Circle id="circle-four" 
+   property="Humedad" 
+   icon={<FontAwesomeIcon icon={faWater} className="secondary-icon"/>}  
+   value={weather?.main.humidity}/>
+<Circle id="empty-circle"/>
+<Circle id="empty-circle"/>
 
-      <article className="secondary-info">
-      
-      <div className="temp-secondary-info">
-      <FontAwesomeIcon icon={faTemperatureThreeQuarters} className="secondary-icon" />
-      <p className="temp-secondary-text">Mínima <span className="number">{Math.round(weather?.main.temp_min)}°</span> - Máxima <span className="number">{Math.round(weather?.main.temp_max)}°</span></p>
-      </div>
-      
-       <div className="other-secondary-info">    
-       <FontAwesomeIcon icon={faUmbrella} className="secondary-icon"/>
-       <p>Precipitaciones:  </p>
-       <FontAwesomeIcon icon={faWind} className="secondary-icon"/> 
-       <p>Viento velocidad: {weather?.wind.speed} </p>
-       <FontAwesomeIcon icon={faWater} className="secondary-icon"/> 
-       <p>Humedad: {weather?.main.humidity} </p>
-       </div>
-       
-       </article>
+<Location/>
 
-    </section>
+<Circle id="empty-circle"/>
+<Circle id="circle-one" 
+   property="Precipitaciones" 
+   icon={<FontAwesomeIcon icon={faUmbrella} className="secondary-icon"/>}  
+   value={weather?.weather[0].rain}/>
+     <MainIcon icon={weather?.weather[0].main}/>
+     <MainInfo weather={weather}/>
+<Circle id="circle-five" 
+   property="Precipitaciones" 
+   icon={<FontAwesomeIcon icon={faUmbrella} className="secondary-icon"/>}  
+   value={weather?.weather[0].rain}/>
+      
+    </div>
   )
 }
 

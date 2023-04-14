@@ -1,0 +1,9 @@
+.location {
+    grid-column: 2/4;
+    text-align: center;
+    position: relative;
+    bottom: 16px;
+    width: fit-content;
+    justify-self: center;
+    }
+    

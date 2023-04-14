@@ -1,16 +1,19 @@
 footer {
-    padding: 38px 24px;
     text-align: center;
-  }
+    background-color: white;
+    height: 10vh;
+}
   
   footer p {
-    display: inline-block; 
-    font-size: small;
-    color: var(--color-darkest-blue);
+       font-size: small;
+    color: var(--color-dark-blue);
+      background-color: inherit;
+      padding: 24px;
   }
   
   footer a {
       font-weight: 700;
-      color: var(--color-darkest-blue);
+      color: var(--color-dark-blue);
+      background-color: inherit;
   }
   

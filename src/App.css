@@ -1,2 +1,6 @@
-
+main {
+    height: 75vh;
+    background-color: var(--color-blue);
+  color: white
+}
 

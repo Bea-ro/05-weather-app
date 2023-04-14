@@ -1,0 +1,12 @@
+.main-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 26px;
+}
+
+.temp-number {
+    font-size: 54px;
+    font-weight: 500;
+    line-height: 54px
+}

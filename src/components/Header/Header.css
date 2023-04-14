@@ -1,11 +1,15 @@
 header {
-    padding: 38px 24px;
-    background-color: var(--color-yellow);
+    background-color: white;
+    height: 15vh;
+}
+
+nav {
+    padding: 24px;
 }
 
 header nav, header ul, header li, header a {
     background-color: inherit;
-    color: var(--color-darkest-blue);
+    color: var(--color-dark-blue);
 }
 
 ul {
@@ -15,3 +19,11 @@ ul {
     padding-left: 0;
     text-transform: uppercase
 } 
+
+header a {
+    font-weight: 500;
+}
+
+nav li:hover {
+    transform: scale(1.1);
+  }

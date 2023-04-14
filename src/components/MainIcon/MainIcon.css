@@ -1,4 +1,16 @@
-.main-icon {
-    height: 132px;
+.main-icon-container {
     color: var(--color-dark-blue);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 12px;
 }
+
+.main-icon {
+height: 132px;
+}
+
+path {
+    fill: white
+  }
+
