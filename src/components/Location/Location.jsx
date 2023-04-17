@@ -1,10 +1,8 @@
 import React from 'react'
-import './Location.css'
+import './Location.css';
+import { date, time } from '../../utils/days';
 
 const Location = () => {
-
-    const date = Intl.DateTimeFormat('es-ES').format(new Date());
-  const time = new Date().getHours() + ':' + new Date().getMinutes()
 
   return (
     <div className="location">

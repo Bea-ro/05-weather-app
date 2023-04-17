@@ -1,29 +1,36 @@
 import React from 'react';
 import './WeatherCard.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUmbrella, faWind, faWater } from '@fortawesome/free-solid-svg-icons';
+import { faUmbrella, faWind, faWater, faEye, faSnowflake, faCloud } from '@fortawesome/free-solid-svg-icons';
 import Circle from '../Circle/Circle';
 import MainIcon from '../MainIcon/MainIcon';
 import MainInfo from '../MainInfo/MainInfo';
 import Location from '../Location/Location';
+import { background, textColor } from '../../utils/colors';
 
-const WeatherCard = ( {weather, error, loaded} ) => {
+const WeatherCard = ( {weather, error, loaded, climate} ) => {
   
+const kilometersHour = Math.round((weather?.wind.speed * 3600)/1000)
+
   return (
-    <div className="weather-card">
+    <div className="weather-card" style={{
+      backgroundColor: background[climate],
+      color: textColor[climate]
+    }}>
    
    <Circle id="circle-two" 
-   property="Viento" 
-   icon={<FontAwesomeIcon icon={faWind} className="secondary-icon"/>}  
-   value={weather?.wind.speed}/>
+   property={weather?.rain? "Precipitaciones": "Dirección viento"}
+   icon={weather?.rain? <FontAwesomeIcon icon={faUmbrella} className="secondary-icon"/> : <FontAwesomeIcon icon={faWind} className="secondary-icon"/>}  
+   value={weather?.rain? `${weather?.rain}%` : `${weather?.wind.deg}°`}/>
+   
 <Circle id="circle-three" 
    property="Humedad" 
    icon={<FontAwesomeIcon icon={faWater} className="secondary-icon"/>}  
-   value={weather?.main.humidity}/>
+   value={`${weather?.main.humidity}%`}/>
 <Circle id="circle-four" 
-   property="Humedad" 
-   icon={<FontAwesomeIcon icon={faWater} className="secondary-icon"/>}  
-   value={weather?.main.humidity}/>
+   property="Visibilidad" 
+   icon={<FontAwesomeIcon icon={faEye} className="secondary-icon"/>}  
+   value={`${weather?.visibility/1000} km`}/>
 <Circle id="empty-circle"/>
 <Circle id="empty-circle"/>
 
@@ -31,15 +38,15 @@ const WeatherCard = ( {weather, error, loaded} ) => {
 
 <Circle id="empty-circle"/>
 <Circle id="circle-one" 
-   property="Precipitaciones" 
-   icon={<FontAwesomeIcon icon={faUmbrella} className="secondary-icon"/>}  
-   value={weather?.weather[0].rain}/>
+   property="Viento" 
+   icon={<FontAwesomeIcon icon={faWind} className="secondary-icon"/>}  
+   value={`${kilometersHour} km/h`}/>
      <MainIcon icon={weather?.weather[0].main}/>
      <MainInfo weather={weather}/>
 <Circle id="circle-five" 
-   property="Precipitaciones" 
-   icon={<FontAwesomeIcon icon={faUmbrella} className="secondary-icon"/>}  
-   value={weather?.weather[0].rain}/>
+   property={weather?.snow? "Cota de nieve" : "Nubes"}
+   icon={weather?.snow? <FontAwesomeIcon icon={faSnowflake} className="secondary-icon"/> : <FontAwesomeIcon icon={faCloud} className="secondary-icon"/>}  
+   value={weather?.snow? `${weather?.snow/1000} m` : `${weather?.clouds.all}%`}/>
       
     </div>
   )

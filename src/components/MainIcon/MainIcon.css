@@ -1,5 +1,4 @@
 .main-icon-container {
-    color: var(--color-dark-blue);
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -9,8 +8,3 @@
 .main-icon {
 height: 132px;
 }
-
-path {
-    fill: white
-  }
-
