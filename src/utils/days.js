@@ -9,12 +9,18 @@ export const time = (hours < 10 ? '0' + hours : hours) + ':' + (minutes < 10 ? '
 
 
 // en qty se pasará 1 al 5
-const getNextDay = (qty) => {
- const dt = 1661871600
+export const getNextDay = (qty) => {
+ const dt = 1681765200
  const transformDt = new Date(dt*1000+24*60*60*1000*qty).toLocaleString('es-ES')
  const fragment = transformDt.split('/')
  const nextDay = fragment[2].slice(0, 4) + '-' + (fragment[1] <10 ? '0' + fragment[1] : fragment[1]) + '-' + (fragment[0] <10 ? '0' + fragment[0] : fragment[0]) + ' ' + fragment[2].slice(6, 14)
 return nextDay
+}
+
+export const getFormatedNextDay = (day) => {
+    const dateOnly = getNextDay(day).slice(0,10);
+    const fragments = dateOnly.split('-');
+    return fragments[2] + '/' + fragments[1] + '/' + fragments[0]
 }
 
 

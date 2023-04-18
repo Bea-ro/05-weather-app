@@ -3,10 +3,10 @@ import './WeatherCard.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUmbrella, faWind, faWater, faEye, faSnowflake, faCloud } from '@fortawesome/free-solid-svg-icons';
 import Circle from '../Circle/Circle';
+import Location from '../Location/Location';
 import MainIcon from '../MainIcon/MainIcon';
 import MainInfo from '../MainInfo/MainInfo';
-import Location from '../Location/Location';
-import { background, textColor } from '../../utils/colors';
+import { background, textColor } from '../../config/colors';
 
 const WeatherCard = ( {weather, error, loaded, climate} ) => {
   

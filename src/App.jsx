@@ -7,9 +7,10 @@ import ByCity from './pages/ByCity/ByCity';
 import NextDays from './pages/NextDays/NextDays';
 import Footer from './components/Footer/Footer';
 
+
 function App() {
   
-  const { weather, error, loaded } = fetch();
+  const { api, setApi, weather, error, loaded } = fetch();
 
   return (
     <>
@@ -20,7 +21,7 @@ function App() {
           element={<ByCity weather={weather} error={error} loaded={loaded} />}
         />
         <Route path="/proximos-dias"
-          element={<NextDays weather={weather} error={error} loaded={loaded} />}
+          element={<NextDays api={api} setApi={setApi} weather={weather} error={error} loaded={loaded} climate={weather?.weather[0].main}/>}
         />
       </Routes>
       <Footer />

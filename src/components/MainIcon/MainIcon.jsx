@@ -5,6 +5,7 @@ import { faCloud, faSun, faSnowflake, faCloudShowersHeavy, faCloudBolt,
 faSmog, } from '@fortawesome/free-solid-svg-icons';
 
 const MainIcon = ( {icon} ) => {
+
   return (
     <div className="main-icon-container">
        {
