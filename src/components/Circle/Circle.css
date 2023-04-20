@@ -26,3 +26,17 @@
 align-items: center;
 gap: 6px;
 }
+
+.secondary-info > .main-icon-container {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.secondary-info > .main-icon-container > .main-icon {
+    height: 1em;
+ }
+
+   
+
+        

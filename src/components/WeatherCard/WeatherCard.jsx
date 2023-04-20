@@ -8,7 +8,7 @@ import MainIcon from '../MainIcon/MainIcon';
 import MainInfo from '../MainInfo/MainInfo';
 import { background, textColor } from '../../config/colors';
 
-const WeatherCard = ( {weather, error, loaded, climate} ) => {
+const WeatherCard = ( {weather, weatherError, weatherLoaded, climate} ) => {
   
 const kilometersHour = Math.round((weather?.wind.speed * 3600)/1000)
 
@@ -21,7 +21,7 @@ const kilometersHour = Math.round((weather?.wind.speed * 3600)/1000)
    <Circle id="circle-two" 
    property={weather?.rain? "Precipitaciones": "Dirección viento"}
    icon={weather?.rain? <FontAwesomeIcon icon={faUmbrella} className="secondary-icon"/> : <FontAwesomeIcon icon={faWind} className="secondary-icon"/>}  
-   value={weather?.rain? `${weather?.rain}%` : `${weather?.wind.deg}°`}/>
+   value={weather?.rain? `${weather?.rain?.["1h"]} mm última h` : `${weather?.wind.deg}°`}/>
    
 <Circle id="circle-three" 
    property="Humedad" 
@@ -41,7 +41,8 @@ const kilometersHour = Math.round((weather?.wind.speed * 3600)/1000)
    property="Viento" 
    icon={<FontAwesomeIcon icon={faWind} className="secondary-icon"/>}  
    value={`${kilometersHour} km/h`}/>
-     <MainIcon icon={weather?.weather[0].main}/>
+     <MainIcon icon={weather?.weather[0].main}
+     />
      <MainInfo weather={weather}/>
 <Circle id="circle-five" 
    property={weather?.snow? "Cota de nieve" : "Nubes"}

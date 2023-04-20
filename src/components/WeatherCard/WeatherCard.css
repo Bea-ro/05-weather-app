@@ -19,6 +19,16 @@
 justify-content: flex-end;
 }
 
+.weather-card > .main-icon-container > .main-icon {
+  height: 132px;
+}
+
+.weather-card > .main-icon-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 12px;
+}
 
 
 

@@ -1,15 +1,13 @@
 import React from 'react';
 import './Home.css';
 import WeatherCard from '../../components/WeatherCard/WeatherCard';
-import { useFetchWeather } from '../../services/fetch';
 
-const Home = () => {
 
-const { weather, error, loaded } = useFetchWeather();
+const Home = ( {weather, weatherError, weatherLoaded} ) => {
 
   return (
     <main>  
-  <WeatherCard weather={weather} error={error} loaded={loaded} climate={weather?.weather[0].main}/>
+  <WeatherCard weather={weather} weatherError={weatherError} weatherLoaded={weatherLoaded} climate={weather?.weather[0].main}/>
     </main>
   );
 };
