@@ -1,5 +1,4 @@
 import React from 'react';
-import './MainIcon.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCloud, faSun, faSnowflake, faCloudShowersHeavy, faCloudBolt,
 faSmog, } from '@fortawesome/free-solid-svg-icons';

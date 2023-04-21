@@ -11,10 +11,10 @@ const Header = () => {
           <Link to="/">Hoy</Link>
         </li>
           <li>
-          <Link to="por-ciudad">Otras ciudades</Link>
+          <Link to="proximos-dias">Próximos días</Link>
         </li>
         <li>
-          <Link to="proximos-dias">Próximos días</Link>
+          <Link to="otras-ciudades">Otras ciudades</Link>
         </li>
         </ul>
         </nav>

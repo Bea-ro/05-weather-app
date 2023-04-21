@@ -1,14 +1,17 @@
 import React from 'react';
-import './Home.css';
-import WeatherCard from '../../components/WeatherCard/WeatherCard';
+import LocalWeatherCard from '../../components/Cards/LocalWeatherCard';
 
 
-const Home = ( {weather, weatherError, weatherLoaded} ) => {
+const Home = ( {localWeather, localWeatherError, localWeatherLoaded} ) => {
 
   return (
     <main>  
-  <WeatherCard weather={weather} weatherError={weatherError} weatherLoaded={weatherLoaded} climate={weather?.weather[0].main}/>
-    </main>
+{localWeatherLoaded ?   
+
+  (<LocalWeatherCard localWeather={localWeather} climate={localWeather?.weather[0].main}/>)
+     : (<h2 className="message">Cargando datos...</h2>)
+}   
+</main>
   );
 };
 

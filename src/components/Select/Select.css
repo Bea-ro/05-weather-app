@@ -1,0 +1,16 @@
+select {
+    padding: 0 0.5rem 0 0.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 15px;
+text-align: center;
+font-family: 'Kanit', sans-serif;
+font-weight: 300;
+height: 24.85px;
+display:flex;
+align-items: center;
+}
+
+option {
+font-weight: 300;
+}

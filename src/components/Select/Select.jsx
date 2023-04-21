@@ -1,23 +1,28 @@
 import React from 'react';
 import './Select.css';
-import cities from '../../data/cities';
+import { cities } from '../../data/cities';
+import { background, textColor } from '../../config/colors';
 
-const Select = () => {
+const Select = ( {city, setCity, climate} ) => {
 
-    // const handleSelect = (ev) => setCity(ev.target.value) 
-
-  return (
-    <>
-         <select name="city" id="city">
-      
-      {cities.map((city) => (
-      <option key={city.name} value={city.name}>{city.name}</option>
+    const handleSelect = (ev) => setCity(ev.target.value) 
+    
+    return (
+      <>
+       <select name="city" value={city} onChange={handleSelect} 
+       style={{
+      backgroundColor: background[climate],
+      color: textColor[climate]
+    }}>
+          
+       {cities.map((city) => (
+      <option key={city.id} value={city.name}>{city.name}</option>
       )
       )}
+          </select>   
+      </>
+    )
+  }
 
-   </select>
-    </>
-  )
-}
 
 export default Select

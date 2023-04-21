@@ -1,79 +1,130 @@
 import axios from 'axios';
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 
-export const latitude = 40.23
-export const longitude = 3.7
-// navigator.geolocation.getCurrentPosition((position) => position.coords.latitude)
+export const useFetchLocalWeather = (lat, lon) => {
+ 
+  const [localWeather, setLocalWeather] = useState(); 
+  const [localWeatherError, setLocalWeatherError] = useState(false);
+  const [localWeatherLoaded, setLocalWeatherLoaded] = useState(false);
 
-export const useFetchWeather = () => {
-
-  const [lat, setLat] = useState(latitude);
-  const [lon, setLon] = useState(longitude);
-  const [weather, setWeather] = useState(); //ver si objeto (lo es en nasa) o array(lo era en forecast)
-  const [weatherError, setWeatherError] = useState(false);
-  const [weatherLoaded, setWeatherLoaded] = useState(false);
-  // const [permission, setPermission] = useState(); //mostrar debes...
-         
   useMemo(() => {
-    setWeatherLoaded(false);
-    setWeatherError(false);
-    
-    const getWeather = async () => {
-            try {
-              const res = await axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&lang=sp&appid=${
-                import.meta.env.VITE_API_KEY
-                }`);
-              return res.data
-              // en la otra era return [...forecast, ...res.data.list]
-            } catch (err) {
-              setWeatherError(true);
-              //Si no doy permiso, mensaje activarlos para poder utilizar la aplicación.
-            }
-          };
-      
-          getWeather().then((data) => {
-            setWeather(data);
-            setWeatherLoaded(true);
-          });
-        }, [lat, lon]);
-        console.log(weather)
-        return { weather, weatherError, weatherLoaded };
-      };
+    setLocalWeatherLoaded(false);
+    setLocalWeatherError(false);
+
+    const getLocalWeather = async () => {
+      try {
+        const res = await axios.get(
+          `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&lang=sp&appid=${
+            import.meta.env.VITE_API_KEY
+          }`
+        );
+        return res.data;
+      } catch (err) {
+        setLocalWeatherError(true);
+      }
+    };
+
+    getLocalWeather().then((data) => {
+      setLocalWeather(data);
+      setLocalWeatherLoaded(true);
+    });
+  }, [lat, lon]);
+  return { localWeather, localWeatherError, localWeatherLoaded };
+};
+
+export const useFetchLocalForecast = (lat, lon) => {
+
+  const [localForecast, setLocalForecast] = useState();
+  const [localForecastError, setLocalForecastError] = useState(false);
+  const [localForecastLoaded, setLocalForecastLoaded] = useState(false);
+  
+  useMemo(() => {
+    setLocalForecastLoaded(false);
+    setLocalForecastError(false);
+
+    const getLocalForecast = async () => {
+      try {
+        const res = await axios.get(
+          `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric&lang=sp&appid=${
+            import.meta.env.VITE_API_KEY
+          }`
+        );
+        return res.data?.list;
+      } catch (err) {
+        setLocalForecastError(true);
+      }
+    };
+
+    getLocalForecast().then((data) => {
+      setLocalForecast(data);
+      setLocalForecastLoaded(true);
+    });
+  }, [lat, lon]);
+
+  return { localForecast, localForecastError, localForecastLoaded };
+};
 
 
-      export const useFetchForecast = () => {
+export const useFetchCityWeather = (city) => {
+  
+  const [cityWeather, setCityWeather] = useState();
+  const [cityWeatherError, setCityWeatherError] = useState(false);
+  const [cityWeatherLoaded, setCityWeatherLoaded] = useState(false);
+  
+  useEffect(() => {
+    setCityWeatherLoaded(false);
+    setCityWeatherError(false);
 
-        const [lat, setLat] = useState(latitude);
-        const [lon, setLon] = useState(longitude);
-        const [forecast, setForecast] = useState(); // array(lo era en forecast)
-        const [forecastError, setForecastError] = useState(false);
-        const [forecastLoaded, setForecastLoaded] = useState(false);
-        // const [permission, setPermission] = useState(); //mostrar debes...
-               
-        useMemo(() => {
-          setForecastLoaded(false);
-          setForecastError(false);
-          
-          const getForecast = async () => {
-                  try {
-                    const res = await axios.get(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric&lang=sp&appid=${
-                      import.meta.env.VITE_API_KEY
-                      }`);
-                    return res.data?.list
-                    // en la otra era return [...forecast, ...res.data.list]
-                  } catch (err) {
-                    setForecastError(true);
-                    //Si no doy permiso, mensaje activarlos para poder utilizar la aplicación.
-                  }
-                };
-            
-                getForecast().then((data) => {
-                  setForecast(data);
-                  setForecastLoaded(true);
-                });
-              }, [lat, lon]);
-              console.log(forecast)
-              return { forecast, forecastError, forecastLoaded };
-            };
+    const getCityWeather = async () => {
+      try {
+        const res = await axios.get(
+          `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&lang=sp&appid=${
+            import.meta.env.VITE_API_KEY
+          }`
+        );
+        return res.data;
+      } catch (err) {
+        setCityWeatherError(true);
+      }
+    };
 
-      
+    getCityWeather().then((data) => {
+      setCityWeather(data);
+      setCityWeatherLoaded(true);
+    });
+  }, [city]);
+
+  return { cityWeather, cityWeatherError, cityWeatherLoaded };
+};
+
+export const useFetchCityForecast = (city) => {
+
+  const [cityForecast, setCityForecast] = useState();
+  const [cityForecastError, setCityForecastError] = useState(false);
+  const [cityForecastLoaded, setCityForecastLoaded] = useState(false);
+  
+  useEffect(() => {
+    setCityForecastLoaded(false);
+    setCityForecastError(false);
+
+    const getCityForecast = async () => {
+      try {
+        const res = await axios.get(
+          `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&lang=sp&appid=${
+            import.meta.env.VITE_API_KEY
+          }`
+        );
+        return res.data?.list;
+      } catch (err) {
+        setCityForecastError(true);
+      }
+    };
+
+    getCityForecast().then((data) => {
+      setCityForecast(data);
+      setCityForecastLoaded(true);
+    });
+  }, [city]);
+
+  return { cityForecast, cityForecastError, cityForecastLoaded };
+};

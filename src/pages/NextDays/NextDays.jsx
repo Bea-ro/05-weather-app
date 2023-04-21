@@ -1,14 +1,16 @@
 import React from 'react';
-import './NextDays.css';
-import ForecastCard from '../../components/ForecastCard/ForecastCard';
+import LocalForecastCard from '../../components/Cards/LocalForecastCard';
 
-const NextDays = ( {weather, forecast, forecastError, forecastLoaded} ) => {
+const NextDays = ( {localWeather, localWeatherLoaded, localForecast, localForecastError, localForecastLoaded} ) => {
 
   return (
    <main>  
-   <ForecastCard weather={weather} forecast={forecast} forecastError={forecastError} forecastLoaded={forecastLoaded} 
-      climate={forecast[0].weather[0].main}
-   />
+{localWeatherLoaded && localForecastLoaded ?    
+
+     (<LocalForecastCard localWeather={localWeather} localForecast={localForecast}  
+      climate={localForecast[0].weather[0].main}/>)
+      : (<h2 className="message">Cargando datos...</h2>)
+}   
     </main>
   )
 }
