@@ -4,7 +4,7 @@ import Circle from '../Circle/Circle';
 import Location from '../Location/Location';
 import MainIcon from '../MainIcon/MainIcon';
 import CityMainInfo from '../MainInfo/CityMainInfo';
-import { background, textColor } from '../../config/colors';
+import { background } from '../../config/colors';
 
 
 const CityForecastCard = ( { cityWeather, cityForecast, climate } ) => {
@@ -49,8 +49,7 @@ const getForecastTempMin = (day) => {
   
     return (
       <div className="weather-card" style={{
-        backgroundColor: background[climate],
-        color: textColor[climate]
+        backgroundColor: background[climate]
       }}>
 
 

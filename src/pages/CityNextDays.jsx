@@ -1,5 +1,6 @@
 import React from 'react';
 import CityForecastCard from '../components/Cards/CityForecastCard';
+import Loading from '../components/Loading/Loading';
 
 const CityNextDays = ( {cityWeather, cityWeatherLoaded, cityForecast, cityForecastError, cityForecastLoaded} ) => {
 
@@ -9,7 +10,7 @@ const CityNextDays = ( {cityWeather, cityWeatherLoaded, cityForecast, cityForeca
 
      (<CityForecastCard cityWeather={cityWeather} cityForecast={cityForecast}  
       climate={cityForecast[0].weather[0].main}/>)
-      : (<h2 className="message">Cargando datos...</h2>)
+      : (<Loading/>)
 }   
     </main>
   )

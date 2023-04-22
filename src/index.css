@@ -7,14 +7,14 @@
   font-style: normal;
 }
 
-/* @keyframes logo-spin {
+@keyframes spin {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
   }
-} */
+}
 
 
 :root {
@@ -25,13 +25,12 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
-  --color-grey: #697e90;
-  --color-light-blue: #e0f3f9;
-  --color-blue: #01a0e1;
   --color-dark-blue: #005d89;
-  --color-darkest-blue: #1E3050;
-  --color-yellow: #fec400;
-  --color-light-yellow: #ffe783;
+  --color-clear: #fec400;
+  --color-rain: #01a0e1;
+  --color-thunderstorm: #1E3050;
+  --color-mist: #a1b4ce;
+  --color-snow: #96c2da;
 }
 
 * {

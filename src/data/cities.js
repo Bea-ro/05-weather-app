@@ -46,5 +46,11 @@ export const cities = [
     id: 2950158,
     lon: 10.45,
     lat: 54.033329
-  }
+  },
+  {name: 'Roma',
+    id: 'x',
+    lon: 40,
+    lat: 50
+  },
+
 ];

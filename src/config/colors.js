@@ -1,17 +1,8 @@
 export const background = {
- Thunderstorm: "var(--color-darkest-blue)",
- Clear: "whitesmoke",
- Snow: "whitesmoke",
- Rain: "var(--color-blue)",  
- Clouds: "var(--color-dark-blue)",   
- Mist: "whitesmoke"   
-}
-
-export const textColor = {
- Thunderstorm: "white",
- Clear: "var(--color-yellow)",
- Snow: "var(--color-blue)",
- Rain: "white",
- Clouds: "white",
- Mist: "var(--color-grey)"
+    Clear: "var(--color-clear)", 
+    Clouds: "var(--color-dark-blue)",
+    Rain: "var(--color-rain)",
+    Thunderstorm: "var(--color-thunderstorm)",
+    Mist: "var(--color-mist)",
+    Snow: "var(--color-snow)",
 }

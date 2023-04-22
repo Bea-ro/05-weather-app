@@ -4,6 +4,7 @@ import Select from '../../components/Select/Select';
 import CityWeatherCard from '../../components/Cards/CityWeatherCard';
 import { Link } from 'react-router-dom';
 import { background, textColor } from '../../config/colors';
+import Loading from '../../components/Loading/Loading';
 
 const ByCity = ( { city, setCity, cityWeather, cityWeatherError, cityWeatherLoaded } ) => {
 
@@ -19,7 +20,7 @@ const ByCity = ( { city, setCity, cityWeather, cityWeatherError, cityWeatherLoad
      {cityWeatherLoaded ?  
   <CityWeatherCard city={city} cityWeather={cityWeather} climate={cityWeather?.weather[0].main}/>
    
-  : (<h2 className="message">Cargando datos...</h2>)
+  : (<Loading/>)
 }   
     </div>
   );

@@ -21,6 +21,7 @@ export const useFetchLocalWeather = (lat, lon) => {
         return res.data;
       } catch (err) {
         setLocalWeatherError(true);
+        // throw new Error('Error fetching weather data at your location')
       }
     };
 
@@ -29,6 +30,7 @@ export const useFetchLocalWeather = (lat, lon) => {
       setLocalWeatherLoaded(true);
     });
   }, [lat, lon]);
+  console.log(localWeatherError)
   return { localWeather, localWeatherError, localWeatherLoaded };
 };
 

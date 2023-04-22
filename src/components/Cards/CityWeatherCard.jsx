@@ -6,7 +6,7 @@ import Circle from '../Circle/Circle';
 import Location from '../Location/Location';
 import MainIcon from '../MainIcon/MainIcon';
 import CityMainInfo from '../MainInfo/CityMainInfo';
-import { background, textColor } from '../../config/colors';
+import { background } from '../../config/colors';
 
 const CityWeatherCard = ( { cityWeather, climate} ) => {
   
@@ -15,8 +15,7 @@ const kilometersHour = Math.round((cityWeather?.wind.speed * 3600)/1000)
   return (
     <div className="weather-card" id="city-weather-card"
     style={{
-      backgroundColor: background[climate],
-      color: textColor[climate]
+      backgroundColor: background[climate]
     }}
     >
    

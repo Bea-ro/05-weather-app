@@ -5,6 +5,7 @@ import Home from './pages/Home/Home';
 import ByCity from './pages/ByCity/ByCity';
 import NextDays from './pages/NextDays/NextDays';
 import CityNextDays from './pages/CityNextDays';
+import NotFound from './pages/NotFound/NotFound'
 import Footer from './components/Footer/Footer';
 import { useFetchLocalWeather, useFetchLocalForecast, useFetchCityWeather, useFetchCityForecast } from './services/fetch';
 import { useState, useEffect } from 'react';
@@ -50,7 +51,7 @@ function App() {
         />}/> 
         <Route path="/otras-ciudades" element={<ByCity city={city} setCity={setCity} cityWeather={cityWeather} cityWeatherError={cityWeatherError} cityWeatherLoaded={cityWeatherLoaded}/>}/>
         <Route path="/otras-ciudades/proximos-dias-ciudad" element={<CityNextDays cityWeather={cityWeather} cityWeatherLoaded={cityWeatherLoaded} cityForecast={cityForecast} cityForecastError={cityForecastError} cityForecastLoaded={cityForecastLoaded}/>}/>
-      
+      <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
       </>

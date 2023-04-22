@@ -6,7 +6,7 @@ import Circle from '../Circle/Circle';
 import Location from '../Location/Location';
 import MainIcon from '../MainIcon/MainIcon';
 import MainInfo from '../MainInfo/MainInfo';
-import { background, textColor } from '../../config/colors';
+import { background } from '../../config/colors';
 
 const LocalWeatherCard = ( {localWeather, climate} ) => {
   
@@ -14,8 +14,7 @@ const kilometersHour = Math.round((localWeather?.wind.speed * 3600)/1000)
 
   return (
     <div className="weather-card" style={{
-      backgroundColor: background[climate],
-      color: textColor[climate]
+      backgroundColor: background[climate]
     }}>
    
    <Circle id="circle-two" 
@@ -41,8 +40,7 @@ const kilometersHour = Math.round((localWeather?.wind.speed * 3600)/1000)
    property="Viento" 
    icon={<FontAwesomeIcon icon={faWind} className="secondary-icon"/>}  
    value={`${kilometersHour} km/h`}/>
-     <MainIcon icon={localWeather?.weather[0].main}
-     />
+     <MainIcon icon={localWeather?.weather[0].main}/>
      <MainInfo localWeather={localWeather}/>
 <Circle id="circle-five" 
    property={localWeather?.snow? "Cota de nieve" : "Nubes"}

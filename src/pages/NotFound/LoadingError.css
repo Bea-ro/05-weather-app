@@ -1,0 +1,14 @@
+.loading-error-figure {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-dark-blue);
+    height: 65vh
+}
+
+.loading-error-icon {
+   height: 46px;
+   animation: spin 2s infinite linear
+}
