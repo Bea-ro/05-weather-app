@@ -1,26 +1,20 @@
 import React from 'react';
 import LocalWeatherCard from '../../components/Cards/LocalWeatherCard';
-import Loading from '../../components/Loading/Loading';
+import Loading from '../../components/ui/Loading/Loading';
+import DataError from '../../components/ui/DataError/DataError';
 
-
-const Home = ( {localWeather, localWeatherError, localWeatherLoaded} ) => {
-
+const Home = ({ localWeather, localWeatherError, localWeatherLoaded }) => {
   return (
-    <main>  
-{/* {localWeatherError? (<h2 className="loading-message">No se han podido obtener los datos</h2>) : */}
+    <main>
+      {localWeatherError?  <DataError /> : 
 
-{localWeatherLoaded ?   
-
-  (<LocalWeatherCard localWeather={localWeather} climate={localWeather?.weather[0].main}/>)
-   : (<Loading/>)
-}   
-</main>
+      localWeatherLoaded ? (
+        <LocalWeatherCard localWeather={localWeather} climate={localWeather?.weather[0].main} />
+      ) : (
+        <Loading />
+      )}
+    </main>
   );
 };
 
 export default Home;
-
-
-    
-      
-  

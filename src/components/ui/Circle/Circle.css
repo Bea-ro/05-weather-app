@@ -1,0 +1,38 @@
+.circle {
+  display: flex;
+  flex-direction: column;
+}
+
+#empty-circle figure {
+  border: none;
+}
+
+.secondary-info {
+  border: 1px solid;
+  border-radius: 50%;
+  text-align: center;
+  height: 80px;
+  width: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+}
+
+.secondary-info-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.secondary-info > .main-icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.secondary-info > .main-icon-container > .main-icon {
+  height: 1em;
+}

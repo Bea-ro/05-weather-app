@@ -16,9 +16,8 @@
   }
 }
 
-
 :root {
-  font-family: 'kanit', sans-serif;;
+  font-family: 'kanit', sans-serif;
   font-weight: 300;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -28,7 +27,7 @@
   --color-dark-blue: #005d89;
   --color-clear: #fec400;
   --color-rain: #01a0e1;
-  --color-thunderstorm: #1E3050;
+  --color-thunderstorm: #1e3050;
   --color-mist: #a1b4ce;
   --color-snow: #96c2da;
 }
@@ -38,8 +37,4 @@
   box-sizing: border-box;
   text-decoration: none;
   list-style: none;
-  }
-
-
-
-
+}

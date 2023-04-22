@@ -3,25 +3,27 @@
 }
 
 .weather-card {
-      display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        grid-template-rows: 45% 10% 45%;
-      height: 75vh;
-      padding: 52px 24px 24px 24px;
-      color: white
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 45% 10% 45%;
+  height: 75vh;
+  padding: 52px 24px 24px 24px;
+  color: white;
 }
 
-    #circle-two, #circle-four{
-    justify-content: flex-end;
-    align-items: flex-end;
+#circle-two,
+#circle-four {
+  justify-content: flex-end;
+  align-items: flex-end;
 }
 
-#circle-three  {
-    align-items: flex-end;
+#circle-three {
+  align-items: flex-end;
 }
 
-#circle-one, #circle-five {
-justify-content: flex-end;
+#circle-one,
+#circle-five {
+  justify-content: flex-end;
 }
 
 .weather-card > .main-icon-container > .main-icon {
@@ -34,8 +36,3 @@ justify-content: flex-end;
   align-items: center;
   margin-right: 12px;
 }
-
-
-
-
-

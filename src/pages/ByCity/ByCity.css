@@ -1,17 +1,16 @@
 .city-options {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0 10px 10px 10px;
-    gap: 22px
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10px 10px 10px;
+  gap: 22px;
 }
 
 .city-days-link {
-font-size:15px;
-border-radius: 6px;
-padding: 0.2rem 0.5rem;
-height: 24.85px;
-display:flex;
-align-items: center;
+  font-size: 15px;
+  border-radius: 6px;
+  padding: 0.2rem 0.5rem;
+  height: 24.85px;
+  display: flex;
+  align-items: center;
 }
-

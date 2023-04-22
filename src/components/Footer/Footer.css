@@ -1,19 +1,18 @@
 footer {
-    text-align: center;
-    background-color: white;
-    height: 10vh;
+  text-align: center;
+  background-color: white;
+  height: 10vh;
 }
-  
-  footer p {
-       font-size: small;
-    color: var(--color-dark-blue);
-      background-color: inherit;
-      padding: 24px;
-  }
-  
-  footer a {
-      font-weight: 700;
-      color: var(--color-dark-blue);
-      background-color: inherit;
-  }
-  
+
+footer p {
+  font-size: small;
+  color: var(--color-dark-blue);
+  background-color: inherit;
+  padding: 24px;
+}
+
+footer a {
+  font-weight: 700;
+  color: var(--color-dark-blue);
+  background-color: inherit;
+}

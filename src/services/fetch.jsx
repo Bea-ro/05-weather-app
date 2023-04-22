@@ -2,8 +2,7 @@ import axios from 'axios';
 import { useState, useMemo, useEffect } from 'react';
 
 export const useFetchLocalWeather = (lat, lon) => {
- 
-  const [localWeather, setLocalWeather] = useState(); 
+  const [localWeather, setLocalWeather] = useState();
   const [localWeatherError, setLocalWeatherError] = useState(false);
   const [localWeatherLoaded, setLocalWeatherLoaded] = useState(false);
 
@@ -30,16 +29,15 @@ export const useFetchLocalWeather = (lat, lon) => {
       setLocalWeatherLoaded(true);
     });
   }, [lat, lon]);
-  console.log(localWeatherError)
+  console.log(localWeatherError);
   return { localWeather, localWeatherError, localWeatherLoaded };
 };
 
 export const useFetchLocalForecast = (lat, lon) => {
-
   const [localForecast, setLocalForecast] = useState();
   const [localForecastError, setLocalForecastError] = useState(false);
   const [localForecastLoaded, setLocalForecastLoaded] = useState(false);
-  
+
   useMemo(() => {
     setLocalForecastLoaded(false);
     setLocalForecastError(false);
@@ -66,13 +64,11 @@ export const useFetchLocalForecast = (lat, lon) => {
   return { localForecast, localForecastError, localForecastLoaded };
 };
 
-
 export const useFetchCityWeather = (city) => {
-  
   const [cityWeather, setCityWeather] = useState();
   const [cityWeatherError, setCityWeatherError] = useState(false);
   const [cityWeatherLoaded, setCityWeatherLoaded] = useState(false);
-  
+
   useEffect(() => {
     setCityWeatherLoaded(false);
     setCityWeatherError(false);
@@ -100,11 +96,10 @@ export const useFetchCityWeather = (city) => {
 };
 
 export const useFetchCityForecast = (city) => {
-
   const [cityForecast, setCityForecast] = useState();
   const [cityForecastError, setCityForecastError] = useState(false);
   const [cityForecastLoaded, setCityForecastLoaded] = useState(false);
-  
+
   useEffect(() => {
     setCityForecastLoaded(false);
     setCityForecastError(false);

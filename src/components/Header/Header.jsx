@@ -7,20 +7,19 @@ const Header = () => {
     <header>
       <nav>
         <ul>
-        <li>
-          <Link to="/">Hoy</Link>
-        </li>
           <li>
-          <Link to="proximos-dias">Próximos días</Link>
-        </li>
-        <li>
-          <Link to="otras-ciudades">Otras ciudades</Link>
-        </li>
+            <Link to="/">Hoy</Link>
+          </li>
+          <li>
+            <Link to="proximos-dias">Próximos días</Link>
+          </li>
+          <li>
+            <Link to="otras-ciudades">Otras ciudades</Link>
+          </li>
         </ul>
-        </nav>
-
+      </nav>
     </header>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
