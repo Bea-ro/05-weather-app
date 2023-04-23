@@ -49,7 +49,7 @@ export const useFetchLocalForecast = (lat, lon) => {
             import.meta.env.VITE_API_KEY
           }`
         );
-        return res.data?.list;
+        return res.data;
       } catch (err) {
         setLocalForecastError(true);
       }

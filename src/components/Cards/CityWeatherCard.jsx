@@ -12,7 +12,7 @@ import {
 import Circle from '../ui/Circle/Circle';
 import Location from '../ui/Location/Location';
 import MainIcon from '../ui/MainIcon/MainIcon';
-import CityMainInfo from '../ui/MainInfo/CityMainInfo';
+import MainInfo from '../ui/MainInfo/MainInfo';
 import { background } from '../../config/colors';
 
 const CityWeatherCard = ({ cityWeather, climate }) => {
@@ -68,7 +68,7 @@ const CityWeatherCard = ({ cityWeather, climate }) => {
         value={`${kilometersHour} km/h`}
       />
       <MainIcon icon={cityWeather?.weather[0].main} />
-      <CityMainInfo cityWeather={cityWeather} />
+      <MainInfo property={cityWeather} />
       <Circle
         id="circle-five"
         property={cityWeather?.snow ? 'Cota de nieve' : 'Nubes'}

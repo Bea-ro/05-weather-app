@@ -1,18 +1,18 @@
 import React from 'react';
 import './MainInfo.css';
 
-const MainInfo = ({ localWeather }) => {
+const MainInfo = ({ property }) => {
   return (
     <div className="main-info">
       <figure>
-        <p className="temp-number">{Math.round(localWeather?.main.temp)}° </p>
+        <p className="temp-number">{Math.round(property?.main.temp)}° </p>
         <p>
-          Mínima <span className="number">{Math.round(localWeather?.main.temp_min)}°</span> - Máxima{' '}
-          <span className="number">{Math.round(localWeather?.main.temp_max)}°</span>
+          Mínima <span className="number">{Math.round(property?.main.temp_min)}°</span> - Máxima{' '}
+          <span className="number">{Math.round(property?.main.temp_max)}°</span>
         </p>
         <p className="feel-like">
           Sensación térmica{' '}
-          <span className="feel-number">{Math.round(localWeather?.main.feels_like)}°</span>
+          <span className="feel-number">{Math.round(property?.main.feels_like)}°</span>
         </p>
       </figure>
     </div>

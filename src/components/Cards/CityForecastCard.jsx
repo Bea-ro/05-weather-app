@@ -3,10 +3,11 @@ import './Cards.css';
 import Circle from '../ui/Circle/Circle';
 import Location from '../ui/Location/Location';
 import MainIcon from '../ui/MainIcon/MainIcon';
-import CityMainInfo from '../ui/MainInfo/CityMainInfo';
+import MainInfo from '../ui/MainInfo/MainInfo';
 import { background } from '../../config/colors';
+import { cities } from '../../data/cities';
 
-const CityForecastCard = ({ cityWeather, cityForecast, climate }) => {
+const CityForecastCard = ({ cityForecast, climate }) => {
   const getNextDay = (qty) => {
     const transformDt = new Date(
       cityForecast[0].dt * 1000 + 24 * 60 * 60 * 1000 * qty
@@ -57,6 +58,15 @@ const CityForecastCard = ({ cityWeather, cityForecast, climate }) => {
     return tempMax;
   };
 
+  const getCityTranslated = (city) => {
+    let translatedName = null
+     cities.forEach((cit)=> {
+      if (cit.apiname === city) {translatedName = cit.name} 
+     })  
+     return translatedName
+    }
+
+
   return (
     <div
       className="weather-card"
@@ -86,7 +96,8 @@ const CityForecastCard = ({ cityWeather, cityForecast, climate }) => {
       <Circle id="empty-circle" />
       <Circle id="empty-circle" />
 
-      <Location city={cityWeather?.name} />
+      <Location />
+      
 
       <Circle id="empty-circle" />
       <Circle
@@ -96,7 +107,7 @@ const CityForecastCard = ({ cityWeather, cityForecast, climate }) => {
         value={`${getForecastTempMin(1)}° - ${getForecastTempMax(1)}°`}
       />
       <MainIcon icon={cityForecast[0].weather[0].main} />
-      <CityMainInfo cityWeather={cityWeather} />
+      <MainInfo property={cityForecast[0]} />
       <Circle
         id="circle-five"
         property={getFormatedNextDay(5)}

@@ -4,15 +4,9 @@ import Header from './components/Header/Header';
 import Home from './pages/Home/Home';
 import ByCity from './pages/ByCity/ByCity';
 import NextDays from './pages/NextDays/NextDays';
-import CityNextDays from './pages/CityNextDays';
+import CityNextDays from './pages/CityNextDays/CityNextDays';
 import NotFound from './pages/NotFound/NotFound';
 import Footer from './components/Footer/Footer';
-import {
-  useFetchLocalWeather,
-  useFetchLocalForecast,
-  useFetchCityWeather,
-  useFetchCityForecast
-} from './services/fetch';
 import { useState, useEffect } from 'react';
 
 function App() {
@@ -20,32 +14,18 @@ function App() {
   const [lat, setLat] = useState();
   const [lon, setLon] = useState();
 
-  useEffect(
-    () => {
+  useEffect(() => {
       navigator.geolocation.getCurrentPosition((position) => {
         const coords = position.coords;
+        setPermission(true)
         setLat(coords.latitude);
         setLon(coords.longitude);
-      });
-      setPermission(true);
-    },
+      },
     (error) => {
       if (error.code === error.PERMISSION_DENIED) {
         setPermission(false); //y mostrar debes...
-      }
-    },
-    []
-  );
-
-  const { localWeather, localWeatherError, localWeatherLoaded } = useFetchLocalWeather(lat, lon);
-  const { localForecast, localForecastError, localForecastLoaded } = useFetchLocalForecast(
-    lat,
-    lon
-  );
-
-  const [city, setCity] = useState('Madrid');
-  const { cityWeather, cityWeatherError, cityWeatherLoaded } = useFetchCityWeather(city);
-  const { cityForecast, cityForecastError, cityForecastLoaded } = useFetchCityForecast(city);
+      }}
+      )}, [])
 
   return (
     <>
@@ -55,9 +35,8 @@ function App() {
           index
           element={
             <Home
-              localWeather={localWeather}
-              localWeatherError={localWeatherError}
-              localWeatherLoaded={localWeatherLoaded}
+              lat={lat}
+              lon={lon}
             />
           }
         />
@@ -65,36 +44,21 @@ function App() {
           path="/proximos-dias"
           element={
             <NextDays
-              localWeather={localWeather}
-              localWeatherLoaded={localWeatherLoaded}
-              localForecast={localForecast}
-              localForecastError={localForecastError}
-              localForecastLoaded={localForecastLoaded}
+            lat={lat}
+            lon={lon}
             />
           }
         />
         <Route
           path="/otras-ciudades"
           element={
-            <ByCity
-              city={city}
-              setCity={setCity}
-              cityWeather={cityWeather}
-              cityWeatherError={cityWeatherError}
-              cityWeatherLoaded={cityWeatherLoaded}
-            />
+            <ByCity/>
           }
         />
         <Route
-          path="/otras-ciudades/proximos-dias-ciudad"
+          path="/otras-ciudades/proximos-dias/:city"
           element={
-            <CityNextDays
-              cityWeather={cityWeather}
-              cityWeatherLoaded={cityWeatherLoaded}
-              cityForecast={cityForecast}
-              cityForecastError={cityForecastError}
-              cityForecastLoaded={cityForecastLoaded}
-            />
+            <CityNextDays/>
           }
         />
         <Route path="*" element={<NotFound />} />

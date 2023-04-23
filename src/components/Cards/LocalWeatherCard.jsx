@@ -67,7 +67,7 @@ const LocalWeatherCard = ({ localWeather, climate }) => {
         value={`${kilometersHour} km/h`}
       />
       <MainIcon icon={localWeather?.weather[0].main} />
-      <MainInfo localWeather={localWeather} />
+      <MainInfo property={localWeather} />
       <Circle
         id="circle-five"
         property={localWeather?.snow ? 'Cota de nieve' : 'Nubes'}
