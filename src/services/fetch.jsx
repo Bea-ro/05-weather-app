@@ -12,16 +12,18 @@ export const useFetchLocalWeather = (lat, lon) => {
 
     const getLocalWeather = async () => {
       try {
+        if (lat && lon) {
         const res = await axios.get(
           `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&lang=sp&appid=${
             import.meta.env.VITE_API_KEY
           }`
         );
         return res.data;
-      } catch (err) {
-        setLocalWeatherError(true);
-        // throw new Error('Error fetching weather data at your location')
       }
+     } catch (err) {
+      setLocalWeatherError(true);
+     //throw new Error('Error fetching weather data at your location')
+      } 
     };
 
     getLocalWeather().then((data) => {
@@ -29,7 +31,7 @@ export const useFetchLocalWeather = (lat, lon) => {
       setLocalWeatherLoaded(true);
     });
   }, [lat, lon]);
-  console.log(localWeatherError);
+  
   return { localWeather, localWeatherError, localWeatherLoaded };
 };
 
@@ -44,21 +46,24 @@ export const useFetchLocalForecast = (lat, lon) => {
 
     const getLocalForecast = async () => {
       try {
+        if (lat && lon) {
         const res = await axios.get(
           `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric&lang=sp&appid=${
             import.meta.env.VITE_API_KEY
           }`
         );
         return res.data;
+      }
       } catch (err) {
         setLocalForecastError(true);
-      }
+      } 
     };
 
     getLocalForecast().then((data) => {
       setLocalForecast(data);
       setLocalForecastLoaded(true);
     });
+    console.log(localForecastError)
   }, [lat, lon]);
 
   return { localForecast, localForecastError, localForecastLoaded };

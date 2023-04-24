@@ -14,12 +14,14 @@ function App() {
   const [lat, setLat] = useState();
   const [lon, setLon] = useState();
 
+
   useEffect(() => {
       navigator.geolocation.getCurrentPosition((position) => {
         const coords = position.coords;
         setPermission(true)
         setLat(coords.latitude);
         setLon(coords.longitude);
+        
       },
     (error) => {
       if (error.code === error.PERMISSION_DENIED) {
