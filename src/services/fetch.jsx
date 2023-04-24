@@ -76,7 +76,7 @@ export const useFetchCityWeather = (city) => {
     const getCityWeather = async () => {
       try {
         const res = await axios.get(
-          `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&lang=sp&appid=${
+          `https://api.openweathermap.org/data/2.5/weather?id=${city}&units=metric&lang=sp&appid=${
             import.meta.env.VITE_API_KEY
           }`
         );
@@ -103,11 +103,12 @@ export const useFetchCityForecast = (city) => {
   useEffect(() => {
     setCityForecastLoaded(false);
     setCityForecastError(false);
+    
 
     const getCityForecast = async () => {
       try {
         const res = await axios.get(
-          `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&lang=sp&appid=${
+          `https://api.openweathermap.org/data/2.5/forecast?id=${city}&units=metric&lang=sp&appid=${
             import.meta.env.VITE_API_KEY
           }`
         );

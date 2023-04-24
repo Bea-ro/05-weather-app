@@ -26,7 +26,7 @@ function App() {
         setPermission(false); //y mostrar debes...
       }}
       )}, [])
-
+      
   return (
     <>
       <Header />

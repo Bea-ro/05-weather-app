@@ -15,7 +15,7 @@ import MainIcon from '../ui/MainIcon/MainIcon';
 import MainInfo from '../ui/MainInfo/MainInfo';
 import { background } from '../../config/colors';
 
-const CityWeatherCard = ({ cityWeather, climate }) => {
+const CityWeatherCard = ({ city, cityWeather, climate }) => {
   const kilometersHour = Math.round((cityWeather?.wind.speed * 3600) / 1000);
 
   return (
@@ -58,7 +58,7 @@ const CityWeatherCard = ({ cityWeather, climate }) => {
       <Circle id="empty-circle" />
       <Circle id="empty-circle" />
 
-      <Location city={cityWeather?.name} />
+      <Location city={city.name} />
 
       <Circle id="empty-circle" />
       <Circle

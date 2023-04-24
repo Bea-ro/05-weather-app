@@ -7,7 +7,7 @@ import MainInfo from '../ui/MainInfo/MainInfo';
 import { background } from '../../config/colors';
 import { cities } from '../../data/cities';
 
-const CityForecastCard = ({ cityForecast, climate }) => {
+const CityForecastCard = ({ city, cityForecast, climate }) => {
   const getNextDay = (qty) => {
     const transformDt = new Date(
       cityForecast[0].dt * 1000 + 24 * 60 * 60 * 1000 * qty
@@ -30,11 +30,11 @@ const CityForecastCard = ({ cityForecast, climate }) => {
     return fragments[2] + '/' + fragments[1] + '/' + fragments[0];
   };
 
-  const getForecastDescription = (day) => {
+  const getForecastDescription = (day, index) => {
     const dayFilter = cityForecast?.filter((fore) => {
       return fore.dt_txt.slice(0, 10) === getNextDay(day).slice(0, 10);
     });
-    const description = dayFilter[0].weather[0].main;
+    const description = dayFilter[index].weather[0].main;
     return description;
   };
 
@@ -58,15 +58,6 @@ const CityForecastCard = ({ cityForecast, climate }) => {
     return tempMax;
   };
 
-  const getCityTranslated = (city) => {
-    let translatedName = null
-     cities.forEach((cit)=> {
-      if (cit.apiname === city) {translatedName = cit.name} 
-     })  
-     return translatedName
-    }
-
-
   return (
     <div
       className="weather-card"
@@ -77,33 +68,33 @@ const CityForecastCard = ({ cityForecast, climate }) => {
       <Circle
         id="circle-two"
         property={getFormatedNextDay(2)}
-        icon={<MainIcon icon={getForecastDescription(2)} />}
+        icon={<MainIcon icon={getForecastDescription(2,4)} />}
         value={`${getForecastTempMin(2)}° - ${getForecastTempMax(2)}°`}
       />
 
       <Circle
         id="circle-three"
         property={getFormatedNextDay(3)}
-        icon={<MainIcon icon={getForecastDescription(3)} />}
+        icon={<MainIcon icon={getForecastDescription(3,4)} />}
         value={`${getForecastTempMin(3)}° - ${getForecastTempMax(3)}°`}
       />
       <Circle
         id="circle-four"
         property={getFormatedNextDay(4)}
-        icon={<MainIcon icon={getForecastDescription(4)} />}
+        icon={<MainIcon icon={getForecastDescription(4,4)} />}
         value={`${getForecastTempMin(4)}° - ${getForecastTempMax(4)}°`}
       />
       <Circle id="empty-circle" />
       <Circle id="empty-circle" />
 
-      <Location />
+      <Location city={city.name} />
       
 
       <Circle id="empty-circle" />
       <Circle
         id="circle-one"
         property={getFormatedNextDay(1)}
-        icon={<MainIcon icon={getForecastDescription(1)} />}
+        icon={<MainIcon icon={getForecastDescription(1,4)} />}
         value={`${getForecastTempMin(1)}° - ${getForecastTempMax(1)}°`}
       />
       <MainIcon icon={cityForecast[0].weather[0].main} />
@@ -111,7 +102,7 @@ const CityForecastCard = ({ cityForecast, climate }) => {
       <Circle
         id="circle-five"
         property={getFormatedNextDay(5)}
-        icon={<MainIcon icon={getForecastDescription(5)} />}
+        icon={<MainIcon icon={getForecastDescription(5,3)} />}
         value={`${getForecastTempMin(5)}° - ${getForecastTempMax(5)}°`}
       />
     </div>

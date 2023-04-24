@@ -11,7 +11,7 @@ const Home = ({ lat, lon }) => {
   return (
     <main>
       {
-      // localWeatherError?  <DataError /> : 
+      localWeatherError?  <DataError /> : 
 
       localWeatherLoaded ? (
         <LocalWeatherCard localWeather={localWeather} climate={localWeather?.weather[0].main} />
