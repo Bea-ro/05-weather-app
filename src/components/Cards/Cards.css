@@ -37,8 +37,21 @@
   margin-right: 12px;
 }
 
-/* 656 */
-@media screen and (max-width: 374px) {
+@media screen and (max-width: 445px) {
+  #circle-two {
+    position: relative;
+    right: 25px;
+  }
+}
+
+@media screen and (min-width: 446px) and (max-width: 620px) {
+  #circle-two {
+    position: relative;
+    right: 75px;
+  }
+}
+
+@media screen and (max-width: 620px) {
 #city-weather-card {
   height: auto;
 }
@@ -64,10 +77,6 @@
   grid-area: circleone;
   display: grid;
   justify-content: flex-start;
-}
-#circle-two {
-  position: relative;
-  right: 25px;
 }
 #circle-three {
   grid-area: circlethree;

@@ -11,7 +11,7 @@
   line-height: 54px;
 }
 
-@media screen and (max-width: 374px) {
+@media screen and (max-width: 620px) {
 .main-info {
   grid-area: maininfo; 
   margin-left: 6px;
