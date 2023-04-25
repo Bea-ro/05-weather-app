@@ -36,3 +36,52 @@
   align-items: center;
   margin-right: 12px;
 }
+
+/* 656 */
+@media screen and (max-width: 374px) {
+#city-weather-card {
+  height: auto;
+}
+.weather-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 10% 40% 25% 25%;
+  grid-template-areas:
+  "location location location"
+  "mainicon maininfo maininfo" 
+  "circleone circletwo  circlethree"
+  "circlefour circlefive circlefive";
+  height: auto;
+  padding: 12px 24px;
+  color: white;
+  gap: 2px;
+}
+.main-icon-container {
+  grid-area: mainicon; 
+  margin-right: 0;
+}
+#circle-one {
+  grid-area: circleone;
+  display: grid;
+  justify-content: flex-start;
+}
+#circle-two {
+  position: relative;
+  right: 25px;
+}
+#circle-three {
+  grid-area: circlethree;
+  align-items: center;
+  display: grid;
+  justify-content: flex-end;
+}
+#circle-four {
+  grid-area: circlefour;
+}
+#circle-five {
+grid-area: circlefive
+}
+.weather-card > .main-icon-container > .main-icon {
+max-width: 132px;
+}
+}

@@ -5,7 +5,6 @@ import Location from '../ui/Location/Location';
 import MainIcon from '../ui/MainIcon/MainIcon';
 import MainInfo from '../ui/MainInfo/MainInfo';
 import { background } from '../../config/colors';
-import { cities } from '../../data/cities';
 
 const CityForecastCard = ({ city, cityForecast, climate }) => {
   const getNextDay = (qty) => {
@@ -102,7 +101,7 @@ const CityForecastCard = ({ city, cityForecast, climate }) => {
       <Circle
         id="circle-five"
         property={getFormatedNextDay(5)}
-        icon={<MainIcon icon={getForecastDescription(5,3)} />}
+        icon={<MainIcon icon={getForecastDescription(5,0)} />}
         value={`${getForecastTempMin(5)}° - ${getForecastTempMax(5)}°`}
       />
     </div>

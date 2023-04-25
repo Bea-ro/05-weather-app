@@ -101,7 +101,7 @@ const LocalForecastCard = ({ localForecast, climate }) => {
       <Circle
         id="circle-five"
         property={getFormatedNextDay(5)}
-        icon={<MainIcon icon={getForecastDescription(5,3)} />}
+        icon={<MainIcon icon={getForecastDescription(5,0)} />}
         value={`${getForecastTempMin(5)}° - ${getForecastTempMax(5)}°`}
       />
     </div>

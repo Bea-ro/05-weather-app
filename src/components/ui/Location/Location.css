@@ -6,3 +6,11 @@
   width: fit-content;
   justify-self: center;
 }
+
+@media screen and (max-width: 374px) {
+.location {
+  grid-column: 2/4;
+  grid-area: location; 
+bottom: 0
+}
+}

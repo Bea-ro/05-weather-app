@@ -36,3 +36,15 @@
 .secondary-info > .main-icon-container > .main-icon {
   height: 1em;
 }
+
+@media screen and (max-width: 374px) {
+.circle {
+  padding: 12px 0
+}
+#empty-circle {
+  display: none;
+}
+.secondary-info-container > p {
+  text-align: center;
+}
+}

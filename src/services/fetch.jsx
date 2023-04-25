@@ -53,7 +53,7 @@ export const useFetchLocalForecast = (lat, lon) => {
           }`
         );
         return res.data;
-      }
+        }
       } catch (err) {
         setLocalForecastError(true);
       } 
@@ -63,10 +63,10 @@ export const useFetchLocalForecast = (lat, lon) => {
       setLocalForecast(data);
       setLocalForecastLoaded(true);
     });
-    console.log(localForecastError)
+    
   }, [lat, lon]);
-
   return { localForecast, localForecastError, localForecastLoaded };
+  
 };
 
 export const useFetchCityWeather = (city) => {
