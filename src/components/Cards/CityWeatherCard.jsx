@@ -21,7 +21,6 @@ const CityWeatherCard = ({ city, cityWeather, climate }) => {
   return (
     <div
       className="forecast-card"
-      id="city-weather-card"
       style={{
         backgroundColor: background[climate]
       }}
