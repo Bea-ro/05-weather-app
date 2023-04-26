@@ -1,14 +1,17 @@
-#city-weather-card {
+.forecast-card {
   height: 70vh;
   padding: 48px 24px 28px 24px;
 }
 
 .weather-card {
+  padding: 52px 24px 24px 24px;
+  height: 75vh;
+}
+
+.weather-card, .forecast-card {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 43% 15% 42%;
-  min-height: 75vh;
-  padding: 52px 24px 24px 24px;
   color: white;
   gap: 6px;
 }
@@ -42,10 +45,7 @@ align-items: center;
 }
 
 @media screen and (max-width: 768px) {
-#city-weather-card {
-  height: fit-content;
-}
-.weather-card {
+.weather-card, .forecast-card {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 10% 40% 25% 25%;
@@ -61,9 +61,6 @@ align-items: center;
 }
 .main-icon-info {
  grid-area: mainiconinfo;
-}
-.weather-card > .main-icon-info > .main-icon-container > .main-icon {
-  max-width: 100px;
 }
 #circle-one {
   grid-area: circleone;
