@@ -5,7 +5,7 @@ import { useFetchLocalForecast } from '../../services/fetch';
 import DataError from '../../components/ui/DataError/DataError';
 import Localization from '../../components/ui/Localization/Localization';
 
-const NextDays = ( {permission} ) => {
+const NextDays = ( { permission } ) => {
 
   const latitude = localStorage.getItem('lat')
   const longitude = localStorage.getItem('lon')
