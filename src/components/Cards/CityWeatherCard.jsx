@@ -55,20 +55,17 @@ const CityWeatherCard = ({ city, cityWeather, climate }) => {
         icon={<FontAwesomeIcon icon={faEye} className="secondary-icon" />}
         value={`${cityWeather?.visibility / 1000} km`}
       />
-      <Circle id="empty-circle" />
-      <Circle id="empty-circle" />
-
       <Location city={city.name} />
-
-      <Circle id="empty-circle" />
       <Circle
         id="circle-one"
         property="Viento"
         icon={<FontAwesomeIcon icon={faWind} className="secondary-icon" />}
         value={`${kilometersHour} km/h`}
       />
+      <div class="main-icon-info">
       <MainIcon icon={cityWeather?.weather[0].main} />
       <MainInfo property={cityWeather} />
+      </div>
       <Circle
         id="circle-five"
         property={cityWeather?.snow ? 'Cota de nieve' : 'Nubes'}

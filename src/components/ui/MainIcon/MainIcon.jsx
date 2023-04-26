@@ -11,7 +11,7 @@ import {
 
 const MainIcon = ({ icon }) => {
   return (
-    <div className="main-icon-container">
+    <>
       {icon === 'Clouds' ? (
         <FontAwesomeIcon icon={faCloud} className="main-icon" />
       ) : icon === 'Clear' ? (
@@ -27,7 +27,7 @@ const MainIcon = ({ icon }) => {
       ) : (
         <></>
       )}
-    </div>
+    </>
   );
 };
 

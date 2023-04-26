@@ -1,6 +1,5 @@
 header {
-  background-color: white;
-  height: 15vh;
+  min-height: 15vh;
 }
 
 nav {
@@ -23,10 +22,23 @@ ul {
   text-transform: uppercase;
 }
 
+li {
+  min-width: 126px;
+}
+
 header a {
   font-weight: 500;
 }
 
 nav li:hover {
   transform: scale(1.1);
+}
+
+@media screen and (max-width: 768px) {
+li {
+  min-width: auto;
+}
+ul {
+  justify-content: space-between;
+}
 }

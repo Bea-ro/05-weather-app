@@ -11,8 +11,6 @@ const NextDays = ( {permission} ) => {
   const longitude = localStorage.getItem('lon')
 
   const { localForecast, localForecastError, localForecastLoaded } = useFetchLocalForecast(latitude,longitude)
-
-//40.2392621,-3.7130592
   
 return (
     <main>

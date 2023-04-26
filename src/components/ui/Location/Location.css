@@ -1,16 +1,12 @@
 .location {
-  grid-column: 2/4;
+  grid-column: 1/5;
   text-align: center;
-  position: relative;
-  bottom: 16px;
   width: fit-content;
   justify-self: center;
 }
 
-@media screen and (max-width: 620px) {
+@media screen and (max-width: 768px) {
 .location {
-  grid-column: 2/4;
-  grid-area: location; 
-bottom: 0
+grid-area: location; 
 }
 }

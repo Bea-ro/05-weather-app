@@ -11,10 +11,10 @@
   line-height: 54px;
 }
 
-@media screen and (max-width: 620px) {
+@media screen and (max-width: 768px) {
 .main-info {
-  grid-area: maininfo; 
-  margin-left: 6px;
-  padding: 24px 0 40px 0;
+  grid-area: maininfo;
+  grid-column: 2/4;
+  margin-left: 20px;
 }
 }

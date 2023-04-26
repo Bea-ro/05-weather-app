@@ -48,27 +48,27 @@ const LocalWeatherCard = ({ localWeather, climate }) => {
         icon={<FontAwesomeIcon icon={faWater} className="secondary-icon" />}
         value={`${localWeather?.main.humidity}%`}
       />
+      
       <Circle
         id="circle-four"
         property="Visibilidad"
         icon={<FontAwesomeIcon icon={faEye} className="secondary-icon" />}
         value={`${localWeather?.visibility / 1000} km`}
       />
-      <Circle id="empty-circle" />
-      <Circle id="empty-circle" />
-
+      
       <Location city={localWeather?.name} />
 
-      <Circle id="empty-circle" />
       <Circle
         id="circle-one"
         property="Viento"
         icon={<FontAwesomeIcon icon={faWind} className="secondary-icon" />}
         value={`${kilometersHour} km/h`}
       />
-      <MainIcon icon={localWeather?.weather[0].main} />
+      <div class="main-icon-info">
+     <MainIcon icon={localWeather?.weather[0].main} />
       <MainInfo property={localWeather} />
-      <Circle
+      </div>
+          <Circle
         id="circle-five"
         property={localWeather?.snow ? 'Cota de nieve' : 'Nubes'}
         icon={

@@ -3,10 +3,6 @@
   flex-direction: column;
 }
 
-#empty-circle figure {
-  border: none;
-}
-
 .secondary-info {
   border: 1px solid;
   border-radius: 50%;
@@ -37,14 +33,8 @@
   height: 1em;
 }
 
-@media screen and (max-width: 620px) {
-.circle {
-  padding: 12px 0
-}
-#empty-circle {
-  display: none;
-}
+@media screen and (max-width: 768px) {
 .secondary-info-container > p {
   text-align: center;
-}
+} 
 }
