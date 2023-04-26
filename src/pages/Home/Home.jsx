@@ -5,7 +5,7 @@ import DataError from '../../components/ui/DataError/DataError';
 import { useFetchLocalWeather } from '../../services/fetch';
 import Localization from '../../components/ui/Localization/Localization';
 
-const Home = ({permission}) => {
+const Home = ({ permission }) => {
 
   const latitude = localStorage.getItem('lat')
   const longitude = localStorage.getItem('lon')
