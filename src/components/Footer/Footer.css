@@ -1,6 +1,6 @@
 footer {
   text-align: center;
-  min-height: 10vh;
+  max-height: 10vh;
 }
 
 footer p {
@@ -15,3 +15,4 @@ footer a {
   color: var(--color-dark-blue);
   background-color: inherit;
 }
+

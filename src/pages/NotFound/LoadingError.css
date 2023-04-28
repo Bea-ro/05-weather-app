@@ -17,3 +17,7 @@
 #loading {
     animation: spin 2s infinite linear
 }
+
+.loading-error-message {
+padding: 0 24px
+}

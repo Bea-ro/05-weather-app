@@ -48,16 +48,15 @@ align-items: center;
 .weather-card, .forecast-card {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 10% 40% 25% 25%;
+  grid-template-rows: 12% 30% 29% 29%;
   grid-template-areas:
   "location location location"
   "mainiconinfo mainiconinfo mainiconinfo"
   "circleone circletwo  circlethree"
   "circlefour circlefive circlefive";
-  height: auto;
-  padding: 12px 24px;
-  color: white;
-  gap: 18px;
+  padding: 30px 24px;
+  min-height: 85vh;
+  gap: 10px;
 }
 .main-icon-info {
  grid-area: mainiconinfo;
