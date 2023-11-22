@@ -8,6 +8,7 @@
 - Geolocalización almacenada en **localStorage**.
 - Diferentes **fetchs** según la respuesta esperada.
 - Renderizado de **loader** mientras se cargan los datos.
+- Estilos dinámicos.
 - **Grid** y diseño responsive mediante **media queries**.
 - Configuración y uso de **Eslint** y **Prettier**.
 - Despliegue con **Netlify**.
